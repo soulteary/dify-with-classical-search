@@ -3,6 +3,7 @@ name: meli
 services:
   meilisearch:
     image: getmeili/meilisearch:v1.8.0
+    container_name: meilisearch
     restart: always
     ports:
       - 7700:7700
