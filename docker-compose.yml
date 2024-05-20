@@ -1,0 +1,19 @@
+name: meli
+# https://www.meilisearch.com/docs/learn/configuration/instance_options
+services:
+  meilisearch:
+    image: getmeili/meilisearch:v1.8.0
+    restart: always
+    ports:
+      - 7700:7700
+    volumes:
+      - ./meili_data:/meili_data
+    environment:
+      MEILI_MASTER_KEY: "soulteary"
+      MEILI_NO_ANALYTICS: "true"
+      MEILI_LOG_LEVEL: "info"
+      MEILI_MAX_INDEXING_MEMORY: "200 MB"
+      MEILI_MAX_INDEXING_THREADS: "2"
+      MEILI_HTTP_PAYLOAD_SIZE_LIMIT: "500 MB"
+      # MEILI_HTTP_ADDR: 0.0.0.0:7700
+      # MEILI_DB_PATH: /meili_data
